@@ -61,7 +61,7 @@
 .chat-footer {
     display: flex;
     align-items: center;
-    padding: 10px;
+    padding: 8px;
 }
 .chat-footer svg {
     padding: 10px;
@@ -75,7 +75,13 @@
     height: 40px;
     outline: 0;
     width: 100%;
+    border-radius: 20px;
+    text-indent: 30px;
 }
+.chat-footer form input::placeholder {
+    padding-left: 2px;
+}
+
 .chat-footer form input[type="submit"] {
     display: none;
 }

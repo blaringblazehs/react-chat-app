@@ -1,13 +1,18 @@
 import { Avatar } from "@mui/material";
 import "./css/sidebar.css";
 
-const Sidebarchat = ({ addnewchat }) => {
-    return !addnewchat ? (
-        <div className="sidebar-chat">
+const Sidebarchat = (props) => {
+    return !props.addnewchat ? (
+        <div
+            className="sidebar-chat"
+            onClick={() => {
+                props.handleclick(props.id);
+            }}
+        >
             <Avatar />
             <div className="sidebar-chat-info">
-                <h2>React Chat</h2>
-                <p>Last message...</p>
+                <h2>{props.name}</h2>
+                <p>{props.lastmessage}</p>
             </div>
         </div>
     ) : (

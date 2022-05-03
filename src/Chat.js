@@ -5,13 +5,22 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import MicIcon from "@mui/icons-material/Mic";
 import "./css/chat.css";
-const Chat = () => {
+import Data from "./Data.json";
+import { useEffect, useState } from "react";
+const Chat = (props) => {
+    // console.log(props.id);
+    const [name, setName] = useState("him");
+    const [messages, setMessages] = useState([]);
+    useEffect(() => {
+        setName(Data[props.id - 1].name);
+        setMessages(Data[props.id - 1].messages);
+    }, [props.id]);
     return (
         <div className="chat">
             <div className="chat-header">
                 <Avatar />
                 <div className="chat-header-info">
-                    <h3>Room Name</h3>
+                    <h3>{name}</h3>
                     <p>Last Seen..</p>
                 </div>
                 <div className="header-right">
@@ -27,21 +36,24 @@ const Chat = () => {
                 </div>
             </div>
             <div className="chat-body">
-                <p className="chat-message chat-reciever">
-                    <span className="chat-name">Admin name</span>
-                    This is test message
-                    <span className="chat-time">12:40 PM</span>
-                </p>
-                <p className="chat-message chat-reciever">
-                    <span className="chat-name">Admin name</span>
-                    This is test message
-                    <span className="chat-time">12:40 PM</span>
-                </p>
-                <p className="chat-message">
-                    <span className="chat-name">Admin name</span>
-                    This is test message
-                    <span className="chat-time">12:40 PM</span>
-                </p>
+                {messages.map((val, index) => {
+                    return val.user == 1 ? (
+                        <p
+                            className="chat-message chat-reciever"
+                            key={`id${index}`}
+                        >
+                            <span className="chat-name">you</span>
+                            <span>{val.message}</span>
+                            <span className="chat-time">12:40 PM</span>
+                        </p>
+                    ) : (
+                        <p className="chat-message" key={`id${index}`}>
+                            <span className="chat-name">{name}</span>
+                            <span>{val.message}</span>
+                            <span className="chat-time">12:40 PM</span>
+                        </p>
+                    );
+                })}
             </div>
             <div className="chat-footer">
                 <EmojiEmotionsIcon />

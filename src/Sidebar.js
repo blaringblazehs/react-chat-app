@@ -5,7 +5,19 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
 import "./css/sidebar.css";
 import Sidebarchat from "./SidebarChat";
-const Sidebar = () => {
+import Data from "./Data.json";
+import { useEffect, useState } from "react";
+const Sidebar = (props) => {
+    const [lastmessage, setLastMessage] = useState("dfd");
+    useEffect(() => {
+        const message = Data.at(-1).name;
+        console.log(message);
+        setLastMessage(message);
+    }, []);
+    const click = (id) => {
+        console.log("clicked", id);
+        props.handleState(id);
+    };
     return (
         <div className="sidebar-container">
             <div className="sidebar-header">
@@ -33,8 +45,17 @@ const Sidebar = () => {
             </div>
             <div className="sidebar-chats">
                 <Sidebarchat addnewchat />
-                <Sidebarchat />
-                <Sidebarchat />
+                {Data.map((val) => {
+                    return (
+                        <Sidebarchat
+                            name={val.name}
+                            lastmessage={val.lastmessage}
+                            handleclick={click}
+                            key={val.id}
+                            id={val.id}
+                        />
+                    );
+                })}
             </div>
         </div>
     );
