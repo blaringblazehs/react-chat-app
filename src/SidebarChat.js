@@ -1,4 +1,5 @@
 import { Avatar } from "@mui/material";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "./css/sidebar.css";
 
 const Sidebarchat = (props) => {
@@ -16,8 +17,9 @@ const Sidebarchat = (props) => {
             </div>
         </div>
     ) : (
-        <div className="sidebar-chat">
+        <div className="sidebar-addchat">
             <h2>Add New Chat</h2>
+            <AddCircleIcon />
         </div>
     );
 };

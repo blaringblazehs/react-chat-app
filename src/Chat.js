@@ -12,9 +12,21 @@ const Chat = (props) => {
     const [name, setName] = useState("him");
     const [messages, setMessages] = useState([]);
     useEffect(() => {
-        setName(Data[props.id - 1].name);
-        setMessages(Data[props.id - 1].messages);
+        setName(props.chat[props.id - 1].name);
+        setMessages(props.chat[props.id - 1].messages);
     }, [props.id]);
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(event.target[0].value);
+        const data = {
+            message: event.target[0].value,
+            date: 13,
+            user: 1,
+        };
+        props.chat[props.id - 1].messages.push(data);
+        props.handleChat(messages);
+        // fs.writeFile("./Data.json", JSON.stringify(data));
+    };
     return (
         <div className="chat">
             <div className="chat-header">
@@ -58,7 +70,7 @@ const Chat = (props) => {
             <div className="chat-footer">
                 <EmojiEmotionsIcon />
                 <AttachFileIcon />
-                <form>
+                <form onSubmit={handleSubmit}>
                     <input
                         type="text"
                         placeholder="Type your message here..."

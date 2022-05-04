@@ -34,7 +34,7 @@
     {
         "id": 2,
         "name": "Uday Hulk",
-        "lastmessage": "kya ker ra bro",
+        "lastmessage": "kya ker raha hai bro",
         "messages": [
             {
                 "message": "Hello",
@@ -67,10 +67,10 @@
     {
         "id": 4,
         "name": "Himanshu",
-        "lastmessage": "How are you",
+        "lastmessage": "How are you?",
         "messages": [
             {
-                "message": "Hello",
+                "message": "Hello Hey",
                 "date": 12,
                 "user": 1
             }
