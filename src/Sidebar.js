@@ -7,6 +7,7 @@ import "./css/sidebar.css";
 import Sidebarchat from "./SidebarChat";
 import Data from "./Data.json";
 import { useEffect, useState } from "react";
+import PopupList from "./PopUpList";
 const Sidebar = (props) => {
     const [lastmessage, setLastMessage] = useState("dfd");
 
@@ -20,11 +21,16 @@ const Sidebar = (props) => {
         console.log("clicked", id);
         props.handleState(id);
     };
+    // to set search value in search bar
     const handleSearch = (e) => {
         // console.log("search", e.target.value);
         // console.log("state text", searchText);
 
         setSearchText(e.target.value);
+    };
+    // to add new chat item in sidebar chat list
+    const addNewChat = () => {
+        console.log("add new chat");
     };
     return (
         <div className="sidebar-container">
@@ -55,8 +61,8 @@ const Sidebar = (props) => {
                 </div>
             </div>
             <div className="sidebar-chats">
-                <Sidebarchat addnewchat />
-
+                <Sidebarchat addnewchat handleAddChat={addNewChat} />
+                <PopupList idMessage="kk" />
                 {props.chat
                     .filter((val) => {
                         if (val.name.includes(searchText)) return val;

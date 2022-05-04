@@ -4,5 +4,29 @@
         "name": "Jacob",
         "lastmessage": "How are you",
         "messages": []
+    },
+    {
+        "id": 6,
+        "name": "Mario",
+        "lastmessage": "How are you",
+        "messages": []
+    },
+    {
+        "id": 7,
+        "name": "John Snow",
+        "lastmessage": "How are you",
+        "messages": []
+    },
+    {
+        "id": 8,
+        "name": "Tyrion Lannister",
+        "lastmessage": "How are you",
+        "messages": []
+    },
+    {
+        "id": 5,
+        "name": "Jaime Lannister",
+        "lastmessage": "How are you",
+        "messages": []
     }
 ]

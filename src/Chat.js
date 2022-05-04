@@ -25,6 +25,7 @@ const Chat = (props) => {
         };
         props.chat[props.id - 1].messages.push(data);
         props.handleChat(messages);
+        event.target[0].value = "";
         // fs.writeFile("./Data.json", JSON.stringify(data));
     };
     return (
