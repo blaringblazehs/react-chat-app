@@ -3,6 +3,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import "../css/sidebar.css";
 
 const Sidebarchat = (props) => {
+    //jsx for single sidebar chat
     return (
         <div
             className="sidebar-chat"

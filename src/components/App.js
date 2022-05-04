@@ -6,13 +6,15 @@ import Data from "../Data.json";
 function App() {
     //selected chat id
     const [id, setId] = useState(1);
-    //chat array
+    //chat array whole app state
     const [chat, setChat] = useState(Data);
+
+    //to get the selected chat from left
     const clickState = (id) => {
-        //to get the selected chat from left
         // console.log("Parent State: ", id);
         setId(id);
     };
+    //set data from json and update on chat state
     useEffect(() => {
         console.log(Data);
         setChat(Data);

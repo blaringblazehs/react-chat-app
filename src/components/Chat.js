@@ -15,6 +15,7 @@ const Chat = (props) => {
         setName(props.chat[props.id - 1].name);
         setMessages(props.chat[props.id - 1].messages);
     }, [props.id]);
+    //on pressing enter
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log(event.target[0].value);

@@ -9,14 +9,17 @@ import Data from "../Data.json";
 import { useEffect, useState } from "react";
 import PopupList from "./PopUpList";
 const Sidebar = (props) => {
+    //last message
     const [lastmessage, setLastMessage] = useState("dfd");
-
+    //set the text in search bar
     const [searchText, setSearchText] = useState("");
+    //set last message
     useEffect(() => {
         const message = props.chat.at(-1).name;
         console.log(message);
         setLastMessage(message);
     }, []);
+    //handle callback for list item
     const click = (id) => {
         // console.log("clicked", id);
         props.handleState(id);
