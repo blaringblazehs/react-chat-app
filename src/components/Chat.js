@@ -4,8 +4,8 @@ import AttachFileIcon from "@mui/icons-material/AttachFile";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import MicIcon from "@mui/icons-material/Mic";
-import "./css/chat.css";
-import Data from "./Data.json";
+import "../css/chat.css";
+import Data from "../Data.json";
 import { useEffect, useState } from "react";
 const Chat = (props) => {
     // console.log(props.id);

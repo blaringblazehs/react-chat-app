@@ -3,9 +3,9 @@ import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
-import "./css/sidebar.css";
+import "../css/sidebar.css";
 import Sidebarchat from "./SidebarChat";
-import Data from "./Data.json";
+import Data from "../Data.json";
 import { useEffect, useState } from "react";
 import PopupList from "./PopUpList";
 const Sidebar = (props) => {
@@ -62,7 +62,7 @@ const Sidebar = (props) => {
                 </div>
             </div>
             <div className="sidebar-chats">
-                <Sidebarchat addnewchat />
+                {/* <Sidebarchat addnewchat /> */}
                 <PopupList handleAddChat={addNewChat} />
                 {props.chat
                     .filter((val) => {

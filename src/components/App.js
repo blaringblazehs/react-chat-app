@@ -1,8 +1,8 @@
-import "./index.css";
+import "../index.css";
 import Sidebar from "./Sidebar";
 import Chat from "./Chat";
 import { useEffect, useState } from "react";
-import Data from "./Data.json";
+import Data from "../Data.json";
 function App() {
     //selected chat id
     const [id, setId] = useState(1);

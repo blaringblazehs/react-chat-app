@@ -33,3 +33,20 @@
     color: white;
     font-size: bold;
 }
+.add-button {
+    display: flex;
+    align-items: center;
+    color: rgb(129, 126, 126);
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid #eaeaea;
+    padding: 10px;
+    padding-left: 12px;
+    padding-right: 20px;
+    font-size: 13px;
+    height: 20px;
+}
+.add-button:hover {
+    cursor: pointer;
+    background-color: #ebebeb;
+}
