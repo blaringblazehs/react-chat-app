@@ -17,11 +17,16 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    /* border: 2px solid black; */
+    border-left: 3px solid black;
     box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+}
+.hide-list h2 {
+    margin-left: 10px;
+    font-size: 18px;
 }
 .hide-list p {
     margin-left: 10px;
+    font-size: 12px;
 }
 .hide-list:hover {
     background-color: rgb(172, 169, 169);

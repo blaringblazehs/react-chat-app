@@ -17,12 +17,7 @@ const Sidebarchat = (props) => {
             </div>
         </div>
     ) : (
-        <div
-            className="sidebar-addchat"
-            onClick={() => {
-                props.handleAddChat();
-            }}
-        >
+        <div className="sidebar-addchat">
             <h2>CONVERSATIONS</h2>
             <AddCircleIcon />
         </div>

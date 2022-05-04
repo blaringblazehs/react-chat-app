@@ -18,7 +18,7 @@ const Sidebar = (props) => {
         setLastMessage(message);
     }, []);
     const click = (id) => {
-        console.log("clicked", id);
+        // console.log("clicked", id);
         props.handleState(id);
     };
     // to set search value in search bar
@@ -29,8 +29,9 @@ const Sidebar = (props) => {
         setSearchText(e.target.value);
     };
     // to add new chat item in sidebar chat list
-    const addNewChat = () => {
-        console.log("add new chat");
+    const addNewChat = (val) => {
+        // console.log("add new chat");
+        props.handleAddNewChat(val);
     };
     return (
         <div className="sidebar-container">
@@ -61,8 +62,8 @@ const Sidebar = (props) => {
                 </div>
             </div>
             <div className="sidebar-chats">
-                <Sidebarchat addnewchat handleAddChat={addNewChat} />
-                <PopupList idMessage="kk" />
+                <Sidebarchat addnewchat />
+                <PopupList handleAddChat={addNewChat} />
                 {props.chat
                     .filter((val) => {
                         if (val.name.includes(searchText)) return val;
